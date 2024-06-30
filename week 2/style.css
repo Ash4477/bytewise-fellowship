@@ -8,6 +8,7 @@
     --color-2: #F26814;
     --hover-color-1: #fba549;
     --hover-color-2: #e88445;
+    --divider-color: #d8d8d8;
     --main-theme: linear-gradient(
         135deg,
         var(--color-1),
@@ -24,6 +25,10 @@ body {
     background: var(--main-theme);
     height: 100vh;
     overflow: hidden;
+
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     font-size: 1rem;
 
     display: flex;
@@ -43,6 +48,10 @@ input[type="text"] {
     margin-bottom: 0.5rem;
     border: 1px solid #a9a9a9;
     border-radius: 5px;
+}
+
+input::placeholder {
+    color: #bbb7c0;
 }
 
 nav {
@@ -69,7 +78,7 @@ button {
     background-color: white;
 }
 
-button:hover {
+button:hover, .active {
     color: var(--color-2);
 }
 
@@ -89,9 +98,8 @@ button:hover {
 
 .divider{
     width: calc(100% + 2rem);
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid var(--divider-color);
     margin-left: -1rem;
-    margin-bottom: 1rem;
 }
 
 .task-list ul {
@@ -102,4 +110,11 @@ button:hover {
     display: flex;
     align-items: center;
     gap: 10px;
+
+    padding: 0.7rem;
+     border-bottom: 1px solid var(--divider-color);
+}
+
+.task-list li.hidden{
+    display: none;
 }
