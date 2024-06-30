@@ -43,7 +43,7 @@ body {
 
 @media screen and (min-width: 1024px) {
     .container {
-        transform: scale(1.5);
+        transform: scale(1.2);
     }
 }
 @media screen and (min-width: 2560px) {
@@ -139,4 +139,10 @@ button:hover, .active {
 
 .task-list li.hidden{
     display: none;
+}
+
+/* for draggin effect */
+
+.dragging {
+    opacity: 0.5;
 }

@@ -1,3 +1,5 @@
+// For Input
+
 let itemNumberTracker = 1;
 
 document.addEventListener('keydown', (e) => {
@@ -18,15 +20,59 @@ document.addEventListener('keydown', (e) => {
         taskLabel.setAttribute("for", `item-${itemNumberTracker}`);
         taskLabel.textContent = inputData.trim();
 
+        itemNumberTracker++;
+
+        taskItem.setAttribute("draggable", "true");
+        taskItem.classList.add("draggable");
         taskItem.appendChild(taskInput);
         taskItem.appendChild(taskLabel);
 
         taskList.appendChild(taskItem);
 
         document.querySelector("#input-task").value = '';
+        
 
+        // For dragging effect
+
+        taskItem.addEventListener("dragstart", () => {
+            taskItem.classList.add("dragging");
+        });
+    
+        taskItem.addEventListener("dragend", () => {
+            taskItem.classList.remove("dragging");
+        });
+
+        taskList.addEventListener("dragover", e => {
+            e.preventDefault();
+            const afterElement = getDragAfterElement(taskList, e.clientY);
+            const currDraggable = document.querySelector(".dragging");
+            if (afterElement == null) {
+                taskList.appendChild(currDraggable);
+            }
+            else {
+                taskList.insertBefore(currDraggable, afterElement);
+            }
+            
+        });
     }
 });
+
+function getDragAfterElement(container, y) {
+    const draggableElements = [...container.querySelectorAll(".draggable:not(.dragging)")];
+
+    return draggableElements.reduce((closest, child) => {
+        const box = child.getBoundingClientRect();
+        const offset = y - box.top  - (box.height / 2);
+        if (offset < 0 && offset > closest.offset) {
+            return { offset: offset, element: child };
+        }
+        else {
+            return closest;
+        }
+    }, { offset: Number.NEGATIVE_INFINITY }).element;
+}
+
+// For Nav Buttons
 
 function setBtnActive(btn) {
     const buttons = document.querySelectorAll("nav button");
