@@ -24,7 +24,6 @@
 body {
     background: var(--main-theme);
     height: 100vh;
-    overflow: hidden;
 
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -67,15 +66,14 @@ body {
 
 input[type="text"] {
     border: 0;
-    /* padding: 0.5rem 1rem;
-    width: calc(100% - 2rem);
-    margin-bottom: 0.5rem;
-    border: 1px solid #a9a9a9;
-    border-radius: 5px; */
 }
 
 input::placeholder {
     color: #bbb7c0;
+}
+
+input:focus {
+    outline: none;
 }
 
 nav {
