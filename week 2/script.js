@@ -11,8 +11,10 @@ document.addEventListener('keydown', (e) => {
 
         const taskList = document.querySelector(".task-list>ul");
         const taskItem = document.createElement("li");
+        const taskSpan = document.createElement("span");
         const taskInput = document.createElement("input");
         const taskLabel = document.createElement("label");
+        const taskBtn = document.createElement("button");
 
         taskInput.setAttribute("type", "checkbox");
         taskInput.setAttribute("id", `item-${itemNumberTracker}`);
@@ -22,10 +24,15 @@ document.addEventListener('keydown', (e) => {
 
         itemNumberTracker++;
 
+        taskSpan.appendChild(taskInput);
+        taskSpan.appendChild(taskLabel);
+
+        taskBtn.innerHTML = `<i class="fa-solid fa-ellipsis"></i>`;
+
         taskItem.setAttribute("draggable", "true");
         taskItem.classList.add("draggable");
-        taskItem.appendChild(taskInput);
-        taskItem.appendChild(taskLabel);
+        taskItem.appendChild(taskSpan);
+        taskItem.appendChild(taskBtn);
 
         taskList.appendChild(taskItem);
 

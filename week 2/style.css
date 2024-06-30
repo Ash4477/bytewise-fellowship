@@ -128,13 +128,19 @@ button:hover, .active {
     list-style-type: none;
 }
 
-.task-list ul li {
+.task-list ul li span {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.task-list ul li  {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 
     padding: 0.7rem;
-     border-bottom: 1px solid var(--divider-color);
+    border-bottom: 1px solid var(--divider-color);
 }
 
 .task-list li.hidden{
