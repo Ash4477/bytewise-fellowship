@@ -60,7 +60,7 @@ showPendingBtn.addEventListener("click", () => {
     setBtnActive(showPendingBtn);
     tasks.forEach(task => {
         const checkbox = task.querySelector("input");
-        if (!checkbox.checked) {
+        if (checkbox.checked) {
             task.classList.add("hidden");
         }
         else {
@@ -74,7 +74,7 @@ showCompletedBtn.addEventListener("click", () => {
     setBtnActive(showCompletedBtn);
     tasks.forEach(task => {
         const checkbox = task.querySelector("input");
-        if (checkbox.checked) {
+        if (!checkbox.checked) {
             task.classList.add("hidden");
         }
         else {
