@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --container-color: #151515;
+    --sub-box-color: #222222;
+    font-size: 14px;
+    font-weight: 100;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+}
+
+body {
+    background-color: #0e0e0e;
+    color: white;
+    text-align: center;
+    padding: 0 5rem;
+}
+
+.container{
+    position: relative;
+    background-color: var(--container-color);
+    padding: 1rem 3rem;
+    height: 100vh;
+}
+
+h1 {
+    font-family: "Roboto Slab", serif;
+    font-size: 3rem; 
+    font-weight: 500;
+}
+
+h1 > span {
+    font-size: 1rem;
+}
+
+.sub-text{
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.write-box, .check-box {
+    background-color: var(--sub-box-color);
+    border-radius: 15px;
+}
+
+.write-box {
+    margin-bottom: 1rem;
+    min-height: 150px;
+}
+
+.write-box > input {
+    background-color: inherit;
+    color: inherit;
+    border: 0;
+    text-align: start;
+    width: calc(100% - 2rem);
+    padding: 1rem;
+    border-radius: 15px;
+    font: inherit;
+}
+
+.write-box>input:focus {
+    outline: 0;
+}
+
+.check-box {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 20px;
+}
+
+.sub-check{
+    display: flex;
+    justify-content: space-around;
+}
+
+.count-box {
+    width: 150px;
+}
+
+
+.count-box > p:first-child {
+    margin-bottom: 0;
+}
+
+.theme-settings{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
