@@ -57,7 +57,7 @@ h1 > span {
     border: 0;
     text-align: start;
     width: calc(100% - 2rem);
-    min-height: 100px;
+    min-height: 150px;
     padding: 1rem;
     border-radius: 15px;
     font: inherit;
