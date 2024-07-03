@@ -1,3 +1,4 @@
+// For Count
 const textBox = document.querySelector(".write-box > textarea");
 const charCount = document.querySelector("#char-count");
 const wordCount = document.querySelector("#word-count");
@@ -40,5 +41,40 @@ textBox.addEventListener("change", () => {
 document.addEventListener("keypress", e => {
     if (e.key == 'Enter' && !e.shiftKey) {
         textBox.blur();
+    }
+});
+
+// For Theme Settings
+const settingsBtn = document.querySelector(".theme-settings > button");
+const themeBoxCloseBtn = document.querySelector(".theme-box > button");
+const themeBox = document.querySelector(".theme-box");
+
+settingsBtn.addEventListener("click", () => {
+    themeBox.classList.remove("hidden");
+});
+
+themeBoxCloseBtn.addEventListener("click", () => {
+    themeBox.classList.add("hidden");
+});
+
+const lightModeBtn = document.querySelector("#light");
+const darkModeBtn = document.querySelector("#dark");
+const root = document.documentElement;
+
+
+darkModeBtn.addEventListener("change", () => {
+    if (darkModeBtn.checked) {
+        root.style.setProperty("--font-color", "white");
+        root.style.setProperty("--container-color", "#151515");
+        root.style.setProperty("--sub-box-color", "#222222");
+
+    }
+});
+
+lightModeBtn.addEventListener("change", () => {
+    if (lightModeBtn.checked) {
+        root.style.setProperty("--font-color", "black");
+        root.style.setProperty("--container-color", "white");
+        root.style.setProperty("--sub-box-color", "#d8d7d7");
     }
 });
