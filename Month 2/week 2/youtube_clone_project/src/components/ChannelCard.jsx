@@ -6,7 +6,7 @@ import { demoProfilePicture } from "../utils/constants";
 
 // TODO: ChannelCard not showing + some videos not from specified channel
 
-const ChannelCard = ({ channelDetail }) => (
+const ChannelCard = ({ channelDetail, marginTop }) => (
   <Box sx={{ 
       boxShadow: "none",
       borderRadius: "20px",
@@ -15,7 +15,8 @@ const ChannelCard = ({ channelDetail }) => (
       alignItems: "center",
       width: { xs: "356px", md: "320px" },
       height: "326px",
-      margin: "auto"
+      margin: "auto",
+      marginTop
     }}>
     <Link to={`/channel/${channelDetail?.id?.channelId}`}>
       <CardContent sx={{ display: "flex", flexDirection: "column", justifyContent: "center", textAlign: "center", color: "#fff" }}>
