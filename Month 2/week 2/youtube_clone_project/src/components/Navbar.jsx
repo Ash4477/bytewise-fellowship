@@ -13,7 +13,7 @@ const Navbar = () => (
   >
     <Link to="/" style={{ display: "flex", alignItems: "center" }}>
       <img src={logo} alt="logo" height={45} />
-      <Typography variant="h6" color="#fff">
+      <Typography variant="h6" color="#fff" className="remove">
         FireTube
       </Typography>
     </Link>

@@ -86,3 +86,9 @@ a {
     width:200px;
   }
 }
+
+@media screen and (max-width: 470px) {
+  .remove {
+    display: none;
+  }
+}
