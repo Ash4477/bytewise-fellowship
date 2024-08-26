@@ -5,8 +5,8 @@ import { useGetRecentPosts, useGetUsers } from "@/lib/react-query/queriesAndMuta
 import { Models } from "appwrite";
 
 const Home = () => {
-  const { data: posts, isLoading: isPostLoading, isError: isErrorPosts } = useGetRecentPosts();
-  const { data: creators, isLoading: isUserLoading, isError: isErrorCreators } = useGetUsers(10);
+  const { data: posts, isLoading: isPostLoading } = useGetRecentPosts();
+  const { data: creators, isLoading: isUserLoading } = useGetUsers(10);
 
   return (
     <div className='flex flex-1'>
