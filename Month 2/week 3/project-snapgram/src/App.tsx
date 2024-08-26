@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Home, Explore, Saved, CreatePost, EditPost, AllUsers, PostDetails, Profile, UpdateProfile  } from './_root/pages';
 import AuthLayout from '@/_auth/AuthLayout';
 import { Toaster } from '@/components/ui/toaster'
-import RootLayout from '@/_root/RootLayout';
+import RootLayout from './_root/RootLayout';
 import SigninForm from './_auth/forms/SigninForm';
 import SignupForm from './_auth/forms/SignupForm';
 
