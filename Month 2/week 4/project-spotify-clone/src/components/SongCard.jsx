@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import PlayPause from './PlayPause';
 import { playPause, setActiveSong } from '../redux/features/playerSlice';
 
-const SongCard = ({ song, i, isPlaying, activeSong, data }) => {
+const SongCard = ({ song, i, isPlaying, activeSong, data, type }) => {
   const dispatch = useDispatch();
 
   const handlePauseClick = () => {
@@ -29,7 +29,7 @@ const SongCard = ({ song, i, isPlaying, activeSong, data }) => {
           />
         </div>
         <img
-          src={song.album.images[0].url}
+          src={type ? song?.albumOfTrack.coverArt.sources[0].url : song.album.images[0].url}
           alt='song image'
         />
       </div>
@@ -41,8 +41,8 @@ const SongCard = ({ song, i, isPlaying, activeSong, data }) => {
             </Link>
           </p>
           <p className='text-sm truncate text-gray-300 mt-1'>
-            <Link to={song.artists ? `/artists/${song?.artists[0].id}` : `/top-artists`}>
-              {song.artists[0].name}
+            <Link to={song.artists ? `/artists/${!type ? song?.artists[0].id : song?.artists.items[0].uri.slice(15)}` : `/top-artists`}>
+              {!type ? song.artists[0].name :  song?.artists.items[0].profile.name}
             </Link>
           </p>
       </div>
