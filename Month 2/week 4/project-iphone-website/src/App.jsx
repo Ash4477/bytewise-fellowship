@@ -1,5 +1,4 @@
 import { Navbar, Hero, Highlights } from './components';
-import './App.css'
 
 const App = () => {
 
