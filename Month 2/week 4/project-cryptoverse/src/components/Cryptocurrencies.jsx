@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Card, Row, Col, Input } from 'antd';
 import Loader from './Loader';
 
-import { useGetCryptosQuery } from '../services/cryptoapi';
+import { useGetCryptosQuery } from '../services/cryptoApi';
 import { useEffect, useState } from 'react';
 
 const Cryptocurrencies = ({ simplified }) => {
