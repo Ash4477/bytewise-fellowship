@@ -9,7 +9,7 @@ import { HiOutlineMenu } from "react-icons/hi";
 const Sidebar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const NavLinks = (handleClick) => (
+  const NavLinks = ({ handleClick }) => (
     <div className="mt-10">
       {links.map((link) => (
         <NavLink
