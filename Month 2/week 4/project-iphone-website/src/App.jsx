@@ -1,14 +1,18 @@
-import { Navbar, Hero, Highlights } from './components';
+import { Navbar, Hero, Highlights, Model, Features, HowItWorks, Footer } from './components';
+import * as Sentry from '@sentry/react';
 
 const App = () => {
-
   return (
     <main className='bg-black'>
       <Navbar />
       <Hero />
-      <Highlights /> 
+      <Highlights />
+      <Model />
+      <Features />
+      <HowItWorks />
+      <Footer />
     </main>
   )
 }
 
-export default App
+export default Sentry.withProfiler(App);
