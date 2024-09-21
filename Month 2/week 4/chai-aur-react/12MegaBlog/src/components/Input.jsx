@@ -14,7 +14,7 @@ const Input = React.forwardRef(({
             </label>}
             <input
                 type={type}
-                className={` ${className}`}
+                className={`p-2 rounded-lg ml-2 ${className}`}
                 ref={ref}
                 {...props}
                 id={id}
